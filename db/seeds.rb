@@ -11,3 +11,8 @@ Category.create!(title: 'title 2', desc: 'desc 2')
 Category.create!(title: 'title 3', desc: 'desc 3')
 Category.create!(title: 'title 4', desc: 'desc 4')
 Category.create!(title: 'title 5', desc: 'desc 5')
+
+science = Category.create!(:title => 'Science')
+
+physics = Category.create!(:title => 'Physics')
+physics.move_to_child_of(science)

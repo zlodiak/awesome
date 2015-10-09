@@ -4,12 +4,18 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.roots
+    #@root_categories = Categories.roots
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @categories = Category.find_by_id(params[:id]).self_and_descendants
+    p '=================='
+    @categories.each do |category|
+      p category.title
+    end
   end
 
   # GET /categories/new

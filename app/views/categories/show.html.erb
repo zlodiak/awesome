@@ -2,13 +2,21 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @category.title %>
+  <%#= @category.title %>
 </p>
 
 <p>
   <strong>Desc:</strong>
-  <%= @category.desc %>
+  <%#= @category.desc %>
 </p>
+
+<ul>
+  <% @categories.each do |category| %>
+    <li>
+      <%= category.name %>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
