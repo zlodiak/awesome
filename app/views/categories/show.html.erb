@@ -1,17 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<strong><%= @categories.first.title %></strong>
 
-<ul>
-  <% @categories.each do |category| %>
-    <li>
-      <% if category.root? %>
-        <strong><%= category.title %></strong>
-      <% else %>
-        <div style="padding-left: <%= category.level %>0px"><%= category.title %>(<%= category.level %>)</div>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<% @categories[1..-1].each do |category| %>
+  <div style="padding-left: <%= category.level %>0px"><%= link_to category.title, category %></div>
+<% end %>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
