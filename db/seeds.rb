@@ -20,5 +20,5 @@ physics.move_to_child_of(science)
 gravity = Category.create!(:title => 'Gravity')
 gravity.move_to_child_of(physics)
 
-fly = Category.create!(:title => 'fly')
-gravity.move_to_child_of(gravity)
+fly = Category.create!(:title => 'Fly')
+fly.move_to_child_of(gravity)

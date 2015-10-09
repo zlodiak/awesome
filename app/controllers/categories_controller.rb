@@ -12,11 +12,6 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @categories = Category.find_by_id(params[:id]).self_and_descendants
-    p '=================='
-    @categories.each do |category|
-      p category
-      p category.title
-    end
   end
 
   # GET /categories/new

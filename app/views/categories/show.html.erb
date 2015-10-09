@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+
 <ul>
   <% @categories.each do |category| %>
     <li>
-      <%= category %>
-      <%= category.title %>
-      <hr />
+      <% if category.root? %>
+        <strong><%= category.title %></strong>
+      <% else %>
+        <%= category.title %>
+      <% end %>
     </li>
   <% end %>
 </ul>
