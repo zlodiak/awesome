@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
     @categories = Category.find_by_id(params[:id]).self_and_descendants
     p '=================='
     @categories.each do |category|
+      p category
       p category.title
     end
   end
