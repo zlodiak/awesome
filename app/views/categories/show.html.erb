@@ -7,7 +7,7 @@
       <% if category.root? %>
         <strong><%= category.title %></strong>
       <% else %>
-        <%= category.title %>
+        <div style="padding-left: <%= category.level %>0px"><%= category.title %>(<%= category.level %>)</div>
       <% end %>
     </li>
   <% end %>
